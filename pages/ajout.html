@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajouter nouveau membre</title>
+    <link rel="stylesheet" href="../style/style.css">
+</head>
+<body>
+    <header>
+        <h1 class="logo">LOGO</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Accueil</a></li>
+                <li><a href="./membre.php">Membre</a></li>
+                <li><a href="">Apropos</a></li>
+                <li><a href="">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <br>
+    <br>
+    <div class="body">
+        <h2>Ajouter nouvel membre</h2>
+        <br>
+        <br>
+        <fieldset>
+            <legend>Inscription</legend>
+            <br>
+            <form action="./ajouter.php" method="post">
+
+                <label for="">Nom</label>
+                <br>
+                <input type="text" name="nom">
+                <br>
+                <br>
+
+                <label for="">Sexe</label>
+                <br>
+                <input type="radio" name="sexe" id="" value="Homme">Homme
+                <br>
+                <input type="radio" name="sexe" id="" value="Femme">Femme
+                <br>
+                <br>
+
+                <label for="">Niveau</label>
+                <br>
+                <input type="text" name="niveau">
+                <br>
+                <br>
+
+                <label for="">Parcours</label>
+                <br>
+                <input type="text" name="parcours">
+                <br>
+                <br>
+
+                <label for="">Etablissement</label>
+                <br>
+                <input type="text" name="etablissement">
+                <br>
+                <br>
+                <br>
+                <button name="valide">Ajouter</button>
+            </form>
+        </fieldset>
+
+    </div>
+</body>
+</html>
