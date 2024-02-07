@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payer cotisation</title>
+    <link rel="stylesheet" href="../style/style.css">
+    <style>
+        input
+        {
+            margin-bottom: 4vw;
+        }
+
+        form
+        {
+            margin-top: 3vw;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="logo">LOGO</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Accueil</a></li>
+                <li><a href="./ajout.html">Nouveau membre</a></li>
+                <li><a href="./cotisation.html">Cotisation</a></li>
+                <li><a href="">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <br>
+    <br>
+    <br>
+    
+    <div class="body">
+        <h2>Payement de cotisation</h2>
+        <br>
+        <fieldset>
+            <legend>Payement</legend>
+            <form action="./payement.php" method="post">
+                <label for="">Numero de membre</label>
+                <br>
+                <input type="text" name="numeroMembre" id="">
+                <br>
+              
+                <label for="">Mois</label>
+                <br>
+                <input type="text" name="mois" id="">
+                <br>
+
+                <label for="">Montant</label>
+                <br>
+                <input type="text" name="montant" id="">
+                <br>
+                
+                <button name="valide">Effectuer</button>
+            </form>
+        </fieldset>
+    </div>
+</body>
+</html>

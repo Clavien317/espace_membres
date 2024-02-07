@@ -91,7 +91,7 @@ fieldset form button
 {
     width: 30%;
     height: 3vw;
-    background-color: blue;
+    background-color: rgb(8, 119, 119);
     color: white;
     border: 0;
     border-radius: 5px;
@@ -124,4 +124,29 @@ fieldset form button
     color: white;
     border: 0;
     border-radius: 5px;
+}
+
+.tache a
+{
+    text-decoration: none;
+    color: blue;
+    font-weight: bold;
+    margin-left: 2vw;
+    width: 20%;
+    height: 2vw;
+    background-color: rgb(8, 119, 119);
+    color: white;
+    padding: 1vw;
+    border-radius: 15px;
+}
+
+.texte
+{
+    width: 100%;
+}
+
+.texte p
+{
+    width: 50%;
+    margin-left: 25%;
 }

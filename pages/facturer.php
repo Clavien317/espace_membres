@@ -21,25 +21,24 @@
     <br>
     <br>
     <div class="body">
-        <h2>Listes de membres inscrit dans notre association</h2>
+        <h2>Listes de membres effectuer la cotisation</h2>
         <br>
         <br>
-        <form action="./recherche.php" method="get" class="search">
-            <select name="colonne" id="">
-                <option value="">Selectionnez </option>
-                <option value="nom">Nom</option>
-                <option value="niveau">Niveau</option>
-                <option value="parcours">Parcours</option>
-                <option value="etablissement">Etablissement</option>
-            </select>
-            <input type="text" name="value"><button>Rechercher</button>
+        <form action="./filtreMensuel.php" method="get" class="search">
+            <select name="value" id="">
+                <option value="">Selectionnez par mois </option>
+                <option value="janvier">janvier</option>
+                <option value="fevrier">fevrier</option>
+                <option value="mars">mars</option>
+                <option value="avril">avril</option>
+            </select><button>Rechercher</button>
         </form>
         <br>
         <br>
 
         <?php
                         $conn = new PDO("mysql:host=localhost;dbname=tp", "root", "");
-                        $req = "SELECT * FROM association";
+                        $req = "SELECT * FROM cotisation";
                         $reponse = $conn->query($req);
                         $membre = $reponse->fetchAll();
                     
@@ -48,25 +47,21 @@
         <table>
             <tr>
                 <th>#</th>
-                <th>Nom</th>
-                <th>Sexe</th>
-                <th>Contact</th>
-                <th>Niveau</th>
-                <th>Parcours</th>
-                <th>Etablissement</th>
+                <th>NumeroMembre</th>
+                <th>Mois de</th>
+                <th>Montant</th>
+                <th>Date de payement</th>
             </tr>
             <?php  
                     foreach ($membre as $List)
                         { 
             ?>
             <tr>
+                <td><?=$List['id']?></td>
                 <td><?=$List['numero']?></td>
-                <td><?=$List['nom']?></td>
-                <td><?=$List['sexe']?></td>
-                <td><?=$List['contact']?></td>
-                <td><?=$List['niveau']?></td>
-                <td><?=$List['parcours']?></td>
-                <td><?=$List['etablissement']?></td>
+                <td><?=$List['mois']?></td>
+                <td><?=$List['montant']?></td>
+                <td><?=$List['date']?></td>
             </tr>
 
             <?php } ?>
