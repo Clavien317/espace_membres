@@ -39,7 +39,7 @@
 
         <!-- Bouton pour générer le PDF -->
         <form action="generate_pdf.php" method="post">
-            <button type="submit" name="generate_pdf">Générer PDF</button>
+            <button type="submit" name="generate_pdf" class="gerer">Générer PDF</button>
         </form>
 
         <!-- Affichage de la liste des membres -->

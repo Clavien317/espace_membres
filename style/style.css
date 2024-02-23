@@ -150,3 +150,12 @@ fieldset form button
     width: 50%;
     margin-left: 25%;
 }
+
+.gerer
+{
+    width: 30%;
+    height: 2vw;
+    background-color:  rgb(8, 119, 119);
+    border-radius: 5px;
+    border: 0;
+}
