@@ -43,13 +43,12 @@
                         $req = "SELECT * FROM cotisation WHERE mois LIKE '%$val%'";
                         $reponse = $conn->query($req);
                         $membre = $reponse->fetchAll();
-                    
                        
         ?>
         <table>
             <tr>
                 <th>#</th>
-                <th>NumeroMembre</th>
+                <th>NomMembre</th>
                 <th>Mois de</th>
                 <th>Montant</th>
                 <th>Date de payement</th>
@@ -65,15 +64,25 @@
                     <?php
                 } else {
                     foreach ($membre as $List) { 
+
+                        $num = $List['numero'];
+                        $res =$conn->query("SELECT * from association where numero='$num'");
+                        $mb = $res->fetchAll(); 
+                        foreach ($mb as $data)
+                        {
+                            // $nom = $data['nom'];
+                            
+                        
                         ?>
                         <tr>
                             <td><?=$List['id']?></td>
-                            <td><?=$List['numero']?></td>
+                            <td><?=$data['nom']?></td>
                             <td><?=$List['mois']?></td>
                             <td><?=$List['montant']?></td>
                             <td><?=$List['date']?></td>
                         </tr>
                         <?php
+                    }
                     }
                 }
                 ?>

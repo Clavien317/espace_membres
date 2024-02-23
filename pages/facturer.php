@@ -47,7 +47,7 @@
         <table>
             <tr>
                 <th>#</th>
-                <th>NumeroMembre</th>
+                <th>Nom du Membre</th>
                 <th>Mois de</th>
                 <th>Montant</th>
                 <th>Date de payement</th>
@@ -55,16 +55,24 @@
             <?php  
                     foreach ($membre as $List)
                         { 
+
+                            $num = $List['numero'];
+                            $res =$conn->query("SELECT * from association where numero='$num'");
+                            $mb = $res->fetchAll(); 
+                            foreach ($mb as $data)
+                            {
+                                // $nom = $data['nom'];
+                               
             ?>
             <tr>
                 <td><?=$List['id']?></td>
-                <td><?=$List['numero']?></td>
+                <td><?=$data['nom']?></td>
                 <td><?=$List['mois']?></td>
                 <td><?=$List['montant']?></td>
                 <td><?=$List['date']?></td>
             </tr>
 
-            <?php } ?>
+            <?php }} ?>
         </table>
     </div>
 </body>

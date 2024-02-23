@@ -44,8 +44,7 @@
                         $conn = new PDO("mysql:host=localhost;dbname=tp", "root", "");
                         $req = "SELECT * FROM association WHERE $colonne LIKE '%$val%'";
                         $reponse = $conn->query($req);
-                        $membre = $reponse->fetchAll();
-                    
+                        $membre = $reponse->fetchAll();                   
                        
         ?>
         <table>

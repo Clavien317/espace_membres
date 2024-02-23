@@ -21,7 +21,7 @@
     <br>
     <br>
     <div class="body">
-        <h2>Listes de membres inscrit dans notre association</h2>
+        <h2>Listes de membres inscrits dans notre association</h2>
         <br>
         <br>
         <form action="./recherche.php" method="get" class="search">
@@ -37,13 +37,17 @@
         <br>
         <br>
 
+        <!-- Bouton pour générer le PDF -->
+        <form action="generate_pdf.php" method="post">
+            <button type="submit" name="generate_pdf">Générer PDF</button>
+        </form>
+
+        <!-- Affichage de la liste des membres -->
         <?php
-                        $conn = new PDO("mysql:host=localhost;dbname=tp", "root", "");
-                        $req = "SELECT * FROM association";
-                        $reponse = $conn->query($req);
-                        $membre = $reponse->fetchAll();
-                    
-                       
+            $conn = new PDO("mysql:host=localhost;dbname=tp", "root", "");
+            $req = "SELECT * FROM association";
+            $reponse = $conn->query($req);
+            $membre = $reponse->fetchAll();
         ?>
         <table>
             <tr>
@@ -56,8 +60,7 @@
                 <th>Etablissement</th>
             </tr>
             <?php  
-                    foreach ($membre as $List)
-                        { 
+                foreach ($membre as $List) { 
             ?>
             <tr>
                 <td><?=$List['numero']?></td>
@@ -68,7 +71,6 @@
                 <td><?=$List['parcours']?></td>
                 <td><?=$List['etablissement']?></td>
             </tr>
-
             <?php } ?>
         </table>
     </div>
