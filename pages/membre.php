@@ -12,7 +12,7 @@
         <nav>
             <ul>
                 <li><a href="../index.html">Accueil</a></li>
-                <li><a href="./ajout.html">Nouveau membre</a></li>
+                <li><a href="./ajout.html">Nouveau membre (+)</a></li>
                 <li><a href="./cotisation.html">Cotisation</a></li>
                 <li><a href="">Contact</a></li>
             </ul>
@@ -37,12 +37,10 @@
         <br>
         <br>
 
-        <!-- Bouton pour générer le PDF -->
         <form action="generate_pdf.php" method="post">
             <button type="submit" name="generate_pdf" class="gerer">Générer PDF</button>
         </form>
 
-        <!-- Affichage de la liste des membres -->
         <?php
             $conn = new PDO("mysql:host=localhost;dbname=tp", "root", "");
             $req = "SELECT * FROM association";
